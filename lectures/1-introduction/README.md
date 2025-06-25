@@ -1,9 +1,19 @@
+template: titleslide
+
+# Introduction to GPU Programming with HIP
+## EPCC, University of Edinburgh
+## training@epcc.ed.ac.uk
+
+
+
+---
+template: titleslide
 # Introduction
 
-- A simple model of performance
-- Graphics processors
 
-## A simple model of performance
+
+---
+# A simple model of performance
 
 A very simple picture of a computer might be
 
@@ -18,32 +28,34 @@ consideration in a performance model:
 4. **Parallelism:** can I replicate the basic unit above?
 
 
-### Clock speed
 
-Processor clock speed determines the fundamental rate of processing
-instructions, and hence data.
+---
+# Clock speed
 
-Historically, increases in CPU performance have been related to increases in
-clock speed. However, owing largely to power constraints, most modern processors
-have a clock speed of around 2-3 GHz.
+- Processor clock speed determines the fundamental rate of processing instructions, and hence data.
 
-Without some unforeseen fundamental breakthrough, it is not expected that this
-fundamental speed will increase significantly in the future.
+- Historically, increases in CPU performance have been related to increases in clock speed. However, owing largely to power constraints, most modern processors have a clock speed of around 2-3 GHz.
 
-### Memory latency
+- Without some unforeseen breakthrough, it is expected that this fundamental speed limit will continue to apply.
 
-Memory latency is a serious concern. It may take O(100-1000) clock cycles, from
-a standing start, to retrieve a piece of data from memory to the processor
+
+
+---
+# Memory latency
+
+- Memory latency is a serious concern. It may take O(100-1000) clock cycles, from a standing start, to retrieve a piece of data from memory to the processor
 (where it can be held and operated on in a register).
 
-
-CPUs mitigate this problem by having caches: memory that is "closer" to the
+- CPUs mitigate this problem by having caches: memory that is "closer" to the
 processor, thereby reducing access time. Many caches are hierarchical in nature:
 the closer the processor, the smaller the cache size in bytes, but the faster
 the access. These are typically referred to as Level 1, Level 2, Level 3, (L1,
 L2, L3) and so on.
 
-#### Exercise (1 minute)
+
+
+---
+# Exercise (1 minute)
 
 Try the command
 ```bash
@@ -55,7 +67,10 @@ Other latency hiding measures exist, e.g., out-of-order execution where
 instructions are executed based on the availability of data, rather than the
 order originally specified.
 
-### Memory bandwidth
+
+
+---
+# Memory bandwidth
 
 CPUs generally have commodity DRAM (dynamic random access memory). While the
 overall size of memory can vary on O(100) GB, the exact size may be a cost
@@ -66,7 +81,10 @@ Note that many real applications are limited by memory bandwidth, where moving
 data rather than performing arithmetic operations becomes the bottleneck.
 Therefore, memory bandwidth is a crucial consideration.
 
-### Parallelism
+
+
+---
+# Parallelism
 
 While it is not possible to increase the clock speed of an individual processor,
 one can use/add more processing units (for which we will read: "cores").
@@ -74,13 +92,18 @@ one can use/add more processing units (for which we will read: "cores").
 Many CPUs are now multi-core or many-core, with perhaps O(10) or O(100) cores.
 Applications wishing to take advantage of such architectures *must* be parallel.
 
-#### Exercise (1 minute)
+
+
+---
+# Exercise (1 minute)
 
 Look at `lscpu` again to check how many cores, or processors, are available on
 ARCHER2.
 
 
-## Graphics processors
+
+---
+# Graphics processors
 
 Driven by commercial interest (games), a many-core processor *par excellence*
 has been developed. These are graphics processors. Subject to the same
@@ -103,7 +126,9 @@ So GPUs have been specifically designed to solve the parallel problem of
 rendering independent pixels. A modern GPU may have O(1000) cores.
 
 
-### Hardware organisation
+
+---
+# Hardware organisation
 
 Cores on AMD GPUs are organised into units referred to as *compute unit*, or
 CUs. Each CU contains several smaller processors called stream processors. These
@@ -123,7 +148,9 @@ For NVIDIA GPUs, the picture is essentially similar, although some of the jargon
 differs.
 
 
-## Host/device picture
+
+---
+# Host/device picture
 
 GPUs are typically 'hosted' by a standard CPU, which is responsible for
 orchestration of GPU activities. In this context, the CPU and GPU are often

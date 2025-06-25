@@ -1,5 +1,10 @@
+template: titleslide
+# The HIP (CUDA) Programming Model
 
-# The HIP/CUDA programming model
+
+
+---
+# The HIP (CUDA) programming model
 
 The application programmer does not want to have to worry about
 the exact disposition of cores/CUs, or whatever, in the hardware.
@@ -9,14 +14,19 @@ In HIP and CUDA, this abstraction is based on an hierarchical
 organisation of threads.
 
 
-## Decomposition into threads
+
+---
+# Decomposition into threads
 
 If we have a one-dimensional problem, e.g., an array, we can assign individual
 elements to threads.
 
 ![A single thread block in one dimension](../images/ks-threads.jpeg)
 
-### Workgroups
+
+
+---
+# Workgroups
 
 A *workgroup* (block) is a collection of work-items (or threads) scheduled to
 run on a single Compute Unit (CU). In our one-dimensional picture we may have:
@@ -33,7 +43,9 @@ Developers typically select the number of wavefronts/workgroup, often based on
 the problem's size.
 
 
-### Two dimensions
+
+---
+# Two dimensions
 
 For two-dimensional problems (e.g., images) it is natural to have a
 two-dimensional Cartesian picture:
@@ -46,7 +58,9 @@ CUDA and HIP allow the picture to be extended straightforwardly
 to three dimensions.
 
 
-## Programming
+
+---
+# Programming
 
 HIP, developed by AMD, stands for Heterogeneous-compute Interface for
 Portability. It's a runtime API and kernel language implemented in C++. This
@@ -64,7 +78,10 @@ The Device, typically the GPU, executes the Device code. It utilizes a C-like
 syntax, where kernels are used to launch device code. Instructions from the
 Host are queued into streams for execution on the device.
 
-## Compilation
+
+
+---
+# Compilation
 
 `hipcc` is a compiler driver utility that calls the AMD LLVM compiler
 `amdclang(++)` (or `nvcc`) to compile HIP code. `hipcc` is included in the AMD
@@ -82,7 +99,10 @@ where the `-x hip` option instructs `hipcc` to interpret code as HIP specific.
 
 To see what `hipcc` passes to the compiler, you can pass the `--verbose` option.
 
-### Compute capabilities
+
+
+---
+# Compute capabilities
 
 Different generations of hardware have different capabilities in terms
 of the features they support.
@@ -99,7 +119,10 @@ or HIP offloading target ID in the form of a device architecture. The available
 values for AMD accelerators can be found in
 https://llvm.org/docs/AMDGPUUsage.html#processors.
 
-## Portability: CUDA and HIP
+
+
+---
+# Portability: CUDA and HIP
 
 CUDA has been under development by NVIDIA since around 2005. AMD, rather
 later to the party, develops HIP, which shadows CUDA. For
@@ -118,7 +141,10 @@ CUDA API routine.
 Not all the latest CUDA functionality is implemented in HIP at any given
 time.
 
-## Summary
+
+
+---
+# Summary
 
 The goal for the programmer is to describe the problem in the
 abstraction of grids, blocks, threads. The hardware is then
