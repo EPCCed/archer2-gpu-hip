@@ -5,3 +5,9 @@ _site
 vendor
 Gemfile.lock
 .DS_Store
+404.html
+Gemfile
+_config.yml
+_posts
+about.markdown
+index.markdown
