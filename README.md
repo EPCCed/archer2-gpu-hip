@@ -1,8 +1,8 @@
-# Green HPC
+# Introduction to GPU Programming with HIP
 
-[Repository view](https://github.com/EPCCed/archer2-gpu-hipc/)
+[Repository view](https://github.com/EPCCed/archer2-gpu-hip/)
 
-[Pages view](https://epcced.github.io/archer2-gpu-hipc/)
+[Pages view](https://epcced.github.io/archer2-gpu-hip/)
 
 This short course will provide an introduction to GPU computing with HIP aimed at scientific application programmers wishing to develop their own software.
 The course will give a background on the difference between CPU and GPU architectures as a prelude to introductory exercises in HIP programming. The course
