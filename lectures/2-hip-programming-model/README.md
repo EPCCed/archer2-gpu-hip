@@ -20,16 +20,25 @@ template: titleslide
 - If we have a one-dimensional problem that can be decomposed into an array, we can assign individual
 elements to threads.
 
-.center[![:scale_img 60%](threads.jpeg)]
+.center[![:scale_img 40%](threads.svg)]
 
 
 
 ---
 # Workgroups
 
-- A *workgroup* (or block) is a collection of work-items (or threads) scheduled to run on a single Compute Unit (CU).
+- A *workgroup* (or block) is a collection of work items (or threads) scheduled to run on a single Compute Unit (CU).
 
-.center[![:scale_img 60%](thread_blocks.jpeg)]
+.center[![:scale_img 80%](thread_blocks.svg)]
+
+
+
+---
+# Workgroups
+
+- A *workgroup* (or block) is a collection of work items (or threads) scheduled to run on a single Compute Unit (CU).
+
+.center[![:scale_img 80%](thread_blocks.svg)]
 
 - A *wavefront* is a subset of a workgroup, designated to execute as a single SIMD <br>(Single Instruction Multiple Data) unit.
   - On AMD GPUs, wavefronts commonly consist of 64 threads and are mapped to CUs for execution by the scheduler.
@@ -41,9 +50,9 @@ elements to threads.
 ---
 # Two dimensions
 
-- For two-dimensional problems (e.g. images) it is natural to have a 2d Cartesian picture:
+- For two-dimensional problems (e.g. images) it is natural to have a 2d Cartesian picture.
 
-.center[![:scale_img 50%](thread_block_grid.jpeg)]
+.center[![:scale_img 70%](thread_block_grid.svg)]
 
 - The arrangement of workgroups is referred to as the *grid*.
 
@@ -90,7 +99,7 @@ elements to threads.
 - The **Host** code follows a C++ syntax, is entered via the usual `main()` function and facilitates such tasks as
   - generating device buffers,
   - managing data transfer between Host and Device, 
-  - initiating the execution of device code.
+  - initiating the execution of Device code.
 
 - The **Device** code has a C-like syntax and is organised as a suite of *kernels*.
 
@@ -121,7 +130,7 @@ hipcc -x hip code.cpp
 The `-x hip` option instructs `hipcc` to interpret code as HIP specific.
 
 ![:thumb](Use the `--verbose` option to see what `hipcc` passes to the compiler.<br>
-Or pass `--help` to obtain full list of possible options.)
+Or pass `--help` to obtain a full list of possible options.)
 
 
 
@@ -136,7 +145,7 @@ Or pass `--help` to obtain full list of possible options.)
   ```
 
 - The complete mapping between architecture target ids and AMD GPU devices can be found at https://llvm.org/docs/AMDGPUUsage.html#processors.
-  - The `gfx90a` target is compatbile with the AMD Instinct 210, 250 and 250X GPUs.
+  - The `gfx90a` target is compatible with the AMD Instinct 210, 250 and 250X GPUs.
 
 
 
@@ -161,7 +170,15 @@ Or pass `--help` to obtain full list of possible options.)
 - The goal for the programmer is to describe a problem using the abstraction of grids, blocks, threads.
   - The hardware is then free to schedule work as it sees fit.
 
-- This is the basis of the scalable parallelism of the architecture.
+- This is the basis of the scalable parallelism of the GPU architecture.
 
 - The very latest HIP programming guide is well worth a look.
   - https://rocm.docs.amd.com/projects/HIP/en/latest/
+
+
+
+---
+# <span style="color:red">Next Lecture</span>
+
+<br>
+## [HIP Programming](../3-hip-programming)

@@ -32,7 +32,7 @@ What limits performance?
 ---
 # Clock speed
 
-- Processor clock speed determines the fundamental rate of processing instructions, and hence data.
+- Processor clock speed determines the fundamental rate of processing instructions <br>and therefore data.
 
 - Historically, increases in CPU performance have been related to increases in clock speed. However, owing largely to power constraints, most modern processors have a clock speed of around 2-3 GHz.
 
@@ -46,7 +46,7 @@ What limits performance?
 - Memory latency is a serious concern.
   - It may take O(100-1000) clock cycles, from a standing start, to transfer an item of data from memory to a register on the processor, where it can be operated on.
 
-- CPUs mitigate this problem by having caches.
+- CPUs mitigate this problem through caching.
   - The "closer" the cache is to the processor, the smaller the cache size in bytes, <br>but the faster the access.
   - Many caches have a hierarchical design, L1, L2, L3.
 
@@ -130,15 +130,15 @@ are executed based on the availability of data, rather than the order originally
 
 <br>
 ![:thumb](Many real applications are limited by memory bandwidth, where moving
-data rather than performing arithmetic operations becomes the bottleneck.<br>
-Therefore, memory bandwidth is a crucial consideration.)
+data rather than performing arithmetic operations becomes the bottleneck.<br><br>
+Memory bandwidth is a crucial consideration.)
 
 
 
 ---
 # Parallelism
 
-- While it is not possible to increase the clock speed of an individual processor,
+- While it is no longer possible to increase the clock speed of an individual processor,
 one can use/add more processing units, i.e. cores.
 
 - Many CPUs are now multi-core or many-core, with perhaps O(10) or O(100) cores.
@@ -182,7 +182,7 @@ Vendor ID:               AuthenticAMD
 # Graphics processors
 
 - Driven by commercial interest (games), a many-core processor *par excellence* was developed, known as the graphics processor or GPU.
-  - The hardware design is suited to the parallel pixel rendering, a trivially <br>parallel problem.
+  - The hardware design is suited to parallel pixel rendering, a trivially <br>parallel problem.
 
 - GPU clocks speeds have, historically, lagged behind CPUs, but are now broadly similar.
   - Improvements in GPU performance relate to parallelism however: a modern GPU may have O(1000) cores.
@@ -192,11 +192,11 @@ Vendor ID:               AuthenticAMD
 ---
 # Graphics processors
 
-- Driven by commercial interest (games), a many-core processor *par excellence* was developed, known as the graphics processor or GPU.
-  - The hardware design is suited to the parallel pixel rendering, a trivially <br>parallel problem.
+- <span style="color:gray">Driven by commercial interest (games), a many-core processor *par excellence* was developed, known as the graphics processor or GPU.</span>
+  - <span style="color:gray">The hardware design is suited to the parallel pixel rendering, a trivially <br>parallel problem.</span>
 
-- GPU clocks speeds have, historically, lagged behind CPUs, but are now broadly similar.
-  - Improvements in GPU performance relate to parallelism however: a modern GPU may have O(1000) cores.
+- <span style="color:gray">GPU clocks speeds have, historically, lagged behind CPUs, but are now broadly similar.</span>
+  - <span style="color:gray">Improvements in GPU performance relate to parallelism however: a modern GPU may have O(1000) cores.</span>
 
 - Memory latency is still an issue and is mitigated by very fast switching between parallel tasks, reducing idle time.
 
@@ -207,31 +207,44 @@ Vendor ID:               AuthenticAMD
 
 
 ---
-# Hardware organisation
+# Hardware organisation <br>(AMD)
 
 - The cores on AMD GPUs are organised into *compute units* or CUs for short.
-  - Each CU contains several smaller processors called stream processors, responsible for performing the mathematical operations required for tasks such as rendering graphics, encoding video and scientific calculations.
+  - Each CU has its own cores, caches and registers.
 
 - For example, an ARCHER2 GPU node has four AMD Instinct MI210 GPU devices.
-  - Each device boasts 104 CUs and each CU houses 64 stream processors, resulting in a total of 6,656 stream processors working in tandem.
+  - Each MI210 device boasts 104 CUs and each CU hosts 64 cores, resulting in a total of 6,656 cores working in tandem.
 
+- A more complete picture can be found via [AMD Instinct Accelerators](https://www.amd.com/en/technologies/cdna.html#instinct).
+
+
+
+---
+# Hardware organisation <br>(NVIDIA)
+
+- The cores on NVIDIA GPUs are organised into *streaming multiprocessors* or SMs for short.
+  - Each SM has its own cores, caches and registers.
+
+- For example, a Cirrus GPU node has four NVIDIA Tesla V100 GPU devices.
+  - Each V100 device boasts 80 SMs and each SM hosts 32 cores, resulting in a total of 2,560 cores working in tandem.
+
+- A more complete picture can be found via [NVIDIA Tesla V100 Accelerators](https://www.nvidia.com/en-gb/data-center/tesla-v100/).
 
 
 
 ---
 # Hardware organisation
 
-- The cores on AMD GPUs are organised into *compute units* or CUs for short.
-  - Each CU contains several smaller processors called stream processors, responsible for performing the mathematical operations required for tasks such as rendering graphics, encoding video and scientific calculations.
+- <span style="color:gray">The cores on NVIDIA GPUs are organised into *streaming multiprocessors* or SMs for short.</span>
+  - <span style="color:gray">Each SM has its own cores, caches and registers.</span>
 
-- For example, an ARCHER2 GPU node has four AMD Instinct MI210 GPU devices.
-  - Each device boasts 104 CUs and each CU houses 64 stream processors, resulting in a total of 6,656 stream processors working in tandem.
+- <span style="color:gray">For example, a Cirrus GPU node has four NVIDIA Tesla V100 GPU devices.</span>
+  - <span style="color:gray">Each V100 device boasts 80 SMs and each SM hosts 32 cores, resulting in a total of 2,560 cores working in tandem.</span>
 
-
-- A more complete overview can be found at [AMD Instinct Accelerators.](https://www.amd.com/en/technologies/cdna.html#instinct)
+- <span style="color:gray">A more complete picture can be found via [NVIDIA Tesla V100 Accelerators](https://www.nvidia.com/en-gb/data-center/tesla-v100/).</span>
 
 <br>
-- For NVIDIA GPUs, the picture is essentially similar, although some of the jargon differs, e.g. Streaming multiprocessors (SMs) instead of compute units (CUs).
+Although there are some differences in jargon, NVIDIA and AMD GPUs are very similar.
 
 
 
@@ -245,3 +258,14 @@ Vendor ID:               AuthenticAMD
 .center[![:scale_img 50%](host_device.svg)]
 
 - Typically, the host (a multi-core CPU) can support 4-8 GPU devices.
+
+- There is clearly potential for the transfer of data between host and device to become a bottleneck
+and so for recent hardware the bandwidth is increased by an order of magnitude.
+
+
+
+---
+# <span style="color:red">Next Lecture</span>
+
+<br>
+## [HIP Programming Model](../2-hip-programming-model)
