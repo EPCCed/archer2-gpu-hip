@@ -20,7 +20,6 @@ Note, this course is also appropriate for those wishing to use NVIDIA GPUs via t
 Attendees must be able to program in C or C++ (course examples and exercises will limit themselves to C++). A familiarity with threaded programming models would be useful,
 but no previous knowledge of GPU programming is required.
 
-See below for links to lectures and exercises.
+Click the link below for the lecture material.
 
 * [Lectures](lectures/)
-* [Practical exercises](exercises/)
