@@ -136,6 +136,7 @@ __global__ void myKernel(int *result) {
 
   int i = blockIdx.x*blockDim.x + threadIdx.x;
   result[i] = 2*i;
+  
 }
 ```
 
@@ -302,15 +303,15 @@ hipLaunchKernelGGL(myKernel, blocks, threadsPerBlock, 0, 0, result);
 
 
 ---
-# <span style="color:red">Exercise:</span> Data transfer (4/7)
+# <span style="color:red">Exercise:</span> Apply a scalar (1/4)
 
 Starting from your solution to the previous exercise, we will now add the relevant kernel and execution configuration. You should adjust the value of the constant, e.g. `a = 2.0`.
 
-There is also a new [`exercise_dscal.hip.cpp`](../../exercises/4-kernels/1-data-transfer/) template with a canned solution to the previous part.
+There is also a new [`exercise_dscal.hip.cpp`](../../exercises/4-kernels/1-data-transfer/) template with a canned solution to the previous exercise.
 
 
 ---
-# <span style="color:red">Exercise:</span> Data transfer (5/7)
+# <span style="color:red">Exercise:</span> Apply a scalar (2/4)
 
 Write a kernel of the prototype scale function.
 
@@ -328,7 +329,7 @@ You can use one block and `THREADS_PER_BLOCK` in the first instance.
 
 
 ---
-# <span style="color:red">Exercise:</span> Data transfer (6/7)
+# <span style="color:red">Exercise:</span> Apply a scalar (3/4)
 
 Update the kernel and then the execution configuration parameters to allow more than one block.
 We will keep the assumption that the array length is a whole number of blocks.
@@ -339,7 +340,7 @@ Check for larger multiples of `THREADS_PER_BLOCK`.
 
 
 ---
-# <span style="color:red">Exercise:</span> Data transfer (7/7)
+# <span style="color:red">Exercise:</span> Apply a scalar (4/4)
 
 As we are effectively constrained in the choice of `THREADS_PER_BLOCK`, it is likely that
 in general, the problem space will not be an integral number of blocks.

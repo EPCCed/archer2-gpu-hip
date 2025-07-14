@@ -147,7 +147,7 @@ later on in the code as apparently unrelated runtime errors.
 
 
 ---
-# <span style="color:red">Exercise:</span> Data transfer (1/7)
+# <span style="color:red">Exercise:</span> Data transfer (1/3)
 
 Read the [`exercise_dscal.hip.cpp`](../../exercises/3-hip-programming/1-data-transfer/) souce file. It is a template for implementing a simple scale function that multiplies all the
 elements of an array by a constant.
@@ -176,7 +176,7 @@ Once the code has compiled, please submit to the queue system using the [`submit
 
 
 ---
-# <span style="color:red">Exercise:</span> Data transfer (2/7)
+# <span style="color:red">Exercise:</span> Data transfer (2/3)
 
 If the code has run correctly, you should see something like the output below.
 
@@ -192,7 +192,7 @@ Only one output array element is correct.
 
 
 ---
-# <span style="color:red">Exercise:</span> Data transfer (3/7)
+# <span style="color:red">Exercise:</span> Data transfer (3/3)
 
 Now add the code that allocates and moves data to and from the GPU.
 
