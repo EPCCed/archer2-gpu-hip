@@ -2,6 +2,7 @@ template: titleslide
 # Constant Memory
 
 
+
 ---
 # Constant memory
 
@@ -129,4 +130,4 @@ How does this complicate the simple matrix-vector update?
 # <span style="color:red">Next Lecture</span>
 
 <br>
-## [Profiling](../8-profiling)
+## [Profiling](../9-profiling)
