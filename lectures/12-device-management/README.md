@@ -109,7 +109,8 @@ in the following scenarios.
 2. copying directly from one device to another using `hipMemcpyDeviceToDevice` with peer access *disabled*;
 3. repeating (2) with peer access enabled.
 
-Note, we will need to adjust our queue submission script to ensure that two GPUs are available to the program.
+Note, we will need to adjust our queue submission script to ensure that two GPUs are available to the program,
+see the submission script [submit.sh](../../exercises/12-device-management/1-peer-access).
 
 
 
