@@ -13,3 +13,4 @@
 11. [Graphs](11-graphs)
 12. [Device Management](12-device-management)
 13. [MPI](13-mpi)
+14. [Conjugate Gradient Solver](14-conjugate-gradient-solver)
