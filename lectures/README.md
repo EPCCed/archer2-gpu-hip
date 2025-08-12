@@ -8,3 +8,8 @@
 6. [Managed Memory](6-managed-memory)
 7. [Shared Memory](7-shared-memory)
 8. [Constant Memory](8-constant-memory)
+9. [Profiling](9-profiling)
+10. [Streams](10-streams)
+11. [Graphs](11-graphs)
+12. [Device Management](12-device-management)
+13. [MPI](13-mpi)
