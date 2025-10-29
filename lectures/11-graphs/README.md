@@ -269,7 +269,7 @@ The exercise revisits again the problem for `A_ij := A_ij + x_i y_j`.
 Can you replace the single kernel launch with the execution of a graph?
 When you have a working program, check with `rocprof` that this is doing what you expect.
 
-A new template is supplied if you wish to start afresh, [exercise_dger.hip.cpp](../../exercises/11-graphs/1-dger).
+A new template is supplied if you wish to start afresh, [exercise_dger.hip.cpp](https://github.com/EPCCed/archer2-gpu-hip/tree/main/exercises/11-graphs/1-dger).
 
 While it will not be possible to see any performance improvement
 associated with this single kernel launch, the principle should

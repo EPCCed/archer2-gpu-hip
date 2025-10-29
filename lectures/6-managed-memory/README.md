@@ -203,7 +203,7 @@ Further info can be found in the [HIP Documentation](https://rocm.docs.amd.com/p
 # <span style="color:red">Exercise:</span> Managed memory
 
 A solution to the previous exercise that used explicit host/device memory management
-is provided by the [exercise_dger.hip.cpp](../../exercises/6-managed-memory/1-managed-memory/) template.
+is provided by the [exercise_dger.hip.cpp](https://github.com/EPCCed/archer2-gpu-hip/tree/main/exercises/6-managed-memory/1-managed-memory/) template.
 
 That exercise computed the matrix operation, A<sub>ij</sub> = A<sub>ij</sub> + α x<sub>i</sub> y<sub>j</sub>.
 

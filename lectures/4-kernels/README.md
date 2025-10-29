@@ -307,7 +307,7 @@ hipLaunchKernelGGL(myKernel, blocks, threadsPerBlock, 0, 0, result);
 
 Starting from your solution to the previous exercise, we will now add the relevant kernel and execution configuration. You should adjust the value of the constant, e.g. `a = 2.0`.
 
-There is also a new [`exercise_dscal.hip.cpp`](../../exercises/4-kernels/1-data-transfer/) template with a canned solution to the previous exercise.
+There is also a new [`exercise_dscal.hip.cpp`](https://github.com/EPCCed/archer2-gpu-hip/tree/main/exercises/4-kernels/1-data-transfer/) template with a canned solution to the previous exercise.
 
 
 ---

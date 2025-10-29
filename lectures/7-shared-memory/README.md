@@ -360,7 +360,7 @@ __global__ void ddot(int n, double *x, double *y, double *result);
 
 The `result` parameter is a single scalar value which stores the dot product.
 
-A naive serial kernel is provided to give the correct result, see the code template, [exercise_ddot.hip.cpp](../../exercises/7-shared-memory/1-vector-scalar).
+A naive serial kernel is provided to give the correct result, see the code template, [exercise_ddot.hip.cpp](https://github.com/EPCCed/archer2-gpu-hip/tree/main/exercises/7-shared-memory/1-vector-scalar).
 
 
 

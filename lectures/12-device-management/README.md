@@ -110,7 +110,7 @@ in the following scenarios.
 3. repeating (2) with peer access enabled.
 
 Note, we will need to adjust our queue submission script to ensure that two GPUs are available to the program,
-see the submission script [submit.sh](../../exercises/12-device-management/1-peer-access).
+see the submission script [submit.sh](https://github.com/EPCCed/archer2-gpu-hip/tree/main/exercises/12-device-management/1-peer-access).
 
 
 

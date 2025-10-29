@@ -97,7 +97,7 @@ y<sub>i</sub> = α A<sub>ij</sub> x<sub>j</sub> ,
 <br><br>
 may be formed with a vector `x` of length `n` to give a result `y` of length `m`.<br>α is a constant.
 
-A new template has been provided ([exercise_dgemv.hip.cpp](../../exercises/8-constant-memory/1-matrix-vector)), one that implements a simple serial version.
+A new template has been provided ([exercise_dgemv.hip.cpp](https://github.com/EPCCed/archer2-gpu-hip/tree/main/exercises/8-constant-memory/1-matrix-vector)), one that implements a simple serial version.
 
 
 ---

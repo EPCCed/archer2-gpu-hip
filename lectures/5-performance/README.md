@@ -166,7 +166,7 @@ This is the favoured pattern for GPU: coalescing favours a given thread having <
 ---
 # <span style="color:red">Exercise:</span> Coalescing (1/5)
 
-Using the code template [exercise_dger.hip.cpp](../../exercises/5-performance/1-coalescing/), implement
+Using the code template [exercise_dger.hip.cpp](https://github.com/EPCCed/archer2-gpu-hip/tree/main/exercises/5-performance/1-coalescing/), implement
 a kernel that computes the following matrix operation.
 
 A<sub>ij</sub> = A<sub>ij</sub> + α x<sub>i</sub> y<sub>j</sub> ,
@@ -176,7 +176,7 @@ where `A` is an `m` × `n` matrix, `x` is a vector of length `m`, `y` is a vecto
 Adopt a flattened one-dimensional indexing for matrix `A`: element row `i` and column `j` is addressed as `A[i*ncol + j]`.
 
 <br>
-As this is also a performance issue, `rocprof` is called from within the `srun` command, see [submission script](../../exercises/5-performance/1-coalescing/).
+As this is also a performance issue, `rocprof` is called from within the `srun` command, see [submission script](https://github.com/EPCCed/archer2-gpu-hip/tree/main/exercises/5-performance/1-coalescing/).
 The `rocprof` utility will profile the GPU kernel, outputting timing info at the end of the execution. Try to keep a note of the time taken by the
 kernel at each stage (reported in nanoseconds (`ns`) by `rocprof`).
 

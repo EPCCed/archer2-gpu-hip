@@ -21,7 +21,7 @@ It is not necessary to understand the details, as we are just interested in impl
 ---
 # Conjugate gradient: implementation
 
-The first step performs a matrix-vector multiplication, see [solution_dgemv.hip.cpp](../../exercises/14-conjugate-gradient-solver).
+The first step performs a matrix-vector multiplication, see [solution_dgemv.hip.cpp](https://github.com/EPCCed/archer2-gpu-hip/tree/main/exercises/14-conjugate-gradient-solver).
 
 The second computes a scalar residual from a vector residual, e.g. the residual for a vector "`r`" of length "`n`"
 can be computed in serial like so.
@@ -33,7 +33,7 @@ for (int i = 0; i < n; i++) {
 }
 ```
 
-You should recognise this as the solution to an earlier exercise ([solution_ddot.hip.cpp](../../exercises/14-conjugate-gradient-solver)).
+You should recognise this as the solution to an earlier exercise ([solution_ddot.hip.cpp](https://github.com/EPCCed/archer2-gpu-hip/tree/main/exercises/14-conjugate-gradient-solver)).
 
 This exercise then involves using those two parts to construct the entire conjugate gradient algorithm.
 Restrict yourself to the use of a single GPU.

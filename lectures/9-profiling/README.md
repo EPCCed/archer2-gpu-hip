@@ -112,7 +112,7 @@ See the link below for all `ncu` command line options.<br>
 ---
 # <span style="color:red">Exercise: Profiling</span>
 
-For the simple matrix operation ([exercise_dger.hip.cpp](../../exercises/9-profiling/1-profiling)) we developed earlier, try to run first Nsight Systems
+For the simple matrix operation ([exercise_dger.hip.cpp](https://github.com/EPCCed/archer2-gpu-hip/tree/main/exercises/9-profiling/1-profiling)) we developed earlier, try to run first Nsight Systems
 and then Nsight Compute with the various options.
 
 Have a go at adding some NVTX markers to highlight a region of host code.

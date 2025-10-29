@@ -80,7 +80,7 @@ also favour use of GPU-aware MPI.
 
 The AMD ROCm software stack includes a build of OpenMPI with GPU-aware MPI enabled.
 
-A [sample program](../../exercises/13-mpi/1-gpu-aware-mpi-send) has been provided which measures the time taken to send messages of different sizes between MPI tasks,
+A [sample program](https://github.com/EPCCed/archer2-gpu-hip/tree/main/exercises/13-mpi/1-gpu-aware-mpi-send) has been provided which measures the time taken to send messages of different sizes between MPI tasks,
 using the two methods outlined above.
 
 Have a look at the program, and try to compile and run it.

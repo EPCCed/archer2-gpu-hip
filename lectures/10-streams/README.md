@@ -199,7 +199,7 @@ Such allocations are often used in conjunction with streams where efficiency is 
 # <span style="color:red">Exercise:</span> `dger` operation (1/2)
 
 We revisit a previous problem that implemented the `dger()` BLAS call.
-For this exercise, a new working template is provided, [exercise_dger.hip.cpp](../../exercises/10-streams/1-dger).
+For this exercise, a new working template is provided, [exercise_dger.hip.cpp](https://github.com/EPCCed/archer2-gpu-hip/tree/main/exercises/10-streams/1-dger).
 
 Here, we illustrate the use of streams and page-locked host memory.
 
