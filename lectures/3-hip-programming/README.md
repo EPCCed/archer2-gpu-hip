@@ -149,7 +149,7 @@ later on in the code as apparently unrelated runtime errors.
 ---
 # <span style="color:red">Exercise:</span> Data transfer (1/3)
 
-Read the [`exercise_dscal.hip.cpp`](../../exercises/3-hip-programming/1-data-transfer/) souce file. It is a template for implementing a simple scale function that multiplies all the
+Read the [`exercise_dscal.hip.cpp`](https://github.com/EPCCed/archer2-gpu-hip/tree/main/exercises/3-hip-programming/1-data-transfer/) source file. It is a template for implementing a simple scale function that multiplies all the
 elements of an array by a constant.
 
 First, check you can compile and run the unaltered template code.
@@ -171,7 +171,7 @@ hipcc -x hip -std=c++11 --rocm-path=${ROCM_PATH} \
       --offload-arch=gfx90a exercise_dscal.hip.cpp
 ```
 
-Once the code has compiled, please submit to the queue system using the [`submit.sh`](../../exercises/3-hip-programming/1-data-transfer/) script.
+Once the code has compiled, please submit to the queue system using the [`submit.sh`](https://github.com/EPCCed/archer2-gpu-hip/tree/main/exercises/3-hip-programming/1-data-transfer/) script.
 
 
 
